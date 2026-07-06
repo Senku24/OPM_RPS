@@ -75,3 +75,25 @@ Open **http://localhost:5173** in your browser.
 | `round:waitingOnOpponent` | First-mover waits |
 | `round:reveal` | Simultaneous reveal to both players |
 | `match:ended` | Final result |
+-------------------------------------->>>>>>>>>
+⚠️ One step needed: Install MongoDB
+MongoDB is not installed on your machine. Run this to install and start it:
+
+bash
+brew tap mongodb/brew
+brew install mongodb-community
+brew services start mongodb-community
+Then seed and start:
+
+bash
+# Terminal 1 — Backend
+cd server && npm run seed && npm run dev
+# Terminal 2 — Frontend
+cd client && npm run dev
+Open http://localhost:5173 and you're live! 🥊
+
+Verification & Polishing----->>
+[ ] Start MongoDB + seed characters
+[ ] Test AI mode & game rules (tie replays, best-of-3 limit)
+[ ] Test Friend mode multi-window flow (synchronized reveal, lack of peeking)
+[ ] Test resilience/reconnect behavior (restore game on browser refresh)
